@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Rainfall Prediction App</title>
+</head>
+<body>
+	<div class= "home">
+		<div class="row">
+			<div class="col-md-3 left-side">
+				<h3>Welcome</h3>
+				<p>Here, You can Check Rain Prediction here!</p>
+			</div>
+			<div class="col-md-9 right-side">
+				<form action="{{ url_for('Hello')}}" method="post" >
+					<h1 class="heading">Rain Prediction for Agriculture</h1>
+					<div class="row right-form">
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="MinTemp"> Minimum Temperature</label>
+                                <input type="text" class="form-control" id="MinTemp" name="MinTemp">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="MaxTemp">Maximum Temperature</label>
+                                <input type="text" class="form-control" id="MaxTemp" name="MaxTemp">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Rainfall">Rainfall</label>
+                                <input type="text" class="form-control" id="Rainfall" name="Rainfall">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Evaporation">Evaporation</label>
+                                <input type="text" class="form-control" id="Evaporation" name="Evaporation">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Sunshine">Sunshine</label>
+                                <input type="text" class="form-control" id="Sunshine" name="Sunshine">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="WindGustSpeed">WindGustSpeed</label>
+                                <input type="text" class="form-control" id="WindGustSpeed" name="WindGustSpeed">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="WindSpeed9am">WindSpeed at 9am</label>
+                                <input type="text" class="form-control" id="WindSpeed9am" name="WindSpeed9am">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="WindSpeed3pm">WindSpeed at 3pm</label>
+                                <input type="text" class="form-control" id="WindSpeed3pm" name="WindSpeed3pm">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Humidity9am">Humidity at 9am</label>
+                                <input type="text" class="form-control" id="Humidity9am" name="Humidity9am">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Humidity3pm">Humidity at 3pm</label>
+                                <input type="text" class="form-control" id="Humidity3pm" name="Humidity3pm">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Pressure9am">Pressure at 9am</label>
+                                <input type="text" class="form-control" id="Pressure9am" name="Pressure9am">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Pressure3pm">Pressure at 3pm</label>
+                                <input type="text" class="form-control" id="Pressure3pm" name="Pressure3pm">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Cloud9am">Cloud 9am</label>
+                                <input type="text" class="form-control" id="Cloud9am" name="Cloud9am">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Cloud3pm">Cloud 3pm</label>
+                                <input type="text" class="form-control" id="Cloud3pm" name="Cloud3pm">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Temp9am">Temperature at 9am</label>
+                                <input type="text" class="form-control" id="Temp9am" name="Temp9am">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Temp3pm">Temperature at 3pm</label>
+                                <input type="text" class="form-control" id="Temp3pm" name="Temp3pm">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="RainToday" name="RainToday">RainToday</label>
+                                <select class="form-control" id="RainToday" name="RainToday" aria-label="RainToday">
+                                    <option class="hidden" selected disabled>Select RainToday</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="year">Year</label>
+                                <input type="text" class="form-control" id="year" name="year">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="month">Month</label>
+                                <input type="text" class="form-control" id="month" name="month">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="day">Day</label>
+                                <input type="text" class="form-control" id="day" name="day">
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="Location" name="Location">Location</label>
+                                <select class="form-control" id="Location" name="Location" aria-label="Location">
+                                    <option class="hidden" selected disabled>Select Location</option>
+                                    <option value="Adelaide">Adelaide</option>
+                                    <option value="Albany">Albany</option>
+                                    <option value="Albury">Albury</option>
+                                    <option value="AliceSprings">AliceSprings</option>
+                                    <option value="BadgerysCreek">BadgerysCreek</option>
+                                    <option value="Ballarat">Ballarat</option>
+                                    <option value="Bendigo">Bendigo</option>
+                                    <option value="Brisbane">Brisbane</option>
+                                    <option value="Cairns">Cairns</option>
+                                    <option value="Canberra">Canberra</option>
+                                    <option value="Cobar">Cobar</option>
+                                    <option value="CoffsHarbour">CoffsHarbour</option>
+                                    <option value="Dartmoor">Dartmoor</option>
+                                    <option value="Darwin">Darwin</option>
+                                    <option value="GoldCoast">GoldCoast</option>
+                                    <option value="Hobart">Hobart</option>
+                                    <option value="Katherine">Katherine</option>
+                                    <option value="Launceston">Launceston</option>
+                                    <option value="Melbourne">Melbourne</option>
+                                    <option value="MelbourneAirport">MelbourneAirport</option>
+                                    <option value="Mildura">Mildura</option>
+                                    <option value="Moree">Moree</option>
+                                    <option value="MountGambier">MountGambier</option>
+                                    <option value="MountGinini">MountGinini</option>
+                                    <option value="Newcastle">Newcastle</option>
+                                    <option value="Nhil">Nhil</option>
+                                    <option value="NorahHead">NorahHead</option>
+                                    <option value="NorfolkIsland">NorfolkIsland</option>
+                                    <option value="Nuriootpa">Nuriootpa</option>
+                                    <option value="PearceRAAF">PearceRAAF</option>
+                                    <option value="Penrith">Penrith</option>
+                                    <option value="Perth">Perth</option>
+                                    <option value="PerthAirport">PerthAirport</option>
+                                    <option value="Portland">Portland</option>
+                                    <option value="Richmond">Richmond</option>
+                                    <option value="Sale">Sale</option>
+                                    <option value="SalmonGums">SalmonGums</option>
+                                    <option value="Sydney">Sydney</option>
+                                    <option value="SydneyAirport">SydneyAirport</option>
+                                    <option value="Townsville">Townsville</option>
+                                    <option value="Tuggeranong">Tuggeranong</option>
+                                    <option value="Uluru">Uluru</option>
+                                    <option value="WaggaWagga">WaggaWagga</option>
+                                    <option value="Walpole">Walpole</option>
+                                    <option value="Watsonia">Watsonia</option>
+                                    <option value="Williamtown">Williamtown</option>
+                                    <option value="Witchcliffe">Witchcliffe</option>
+                                    <option value="Wollongong">Wollongong</option>
+                                    <option value="Woomera">Woomera</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="WindGustDir" name = "WindGustDir">WindGustDir</label>
+                                <select class="form-control" id="WindGustDir" name="WindGustDir" aria-label="WindGustDir">
+                                    <option class="hidden" selected disabled>Select WindGustDir</option>
+                                    <option value="ENE">ENE</option>
+                                    <option value="ESE">ESE</option>
+                                    <option value="E">E</option>
+                                    <option value="N">N</option>
+                                    <option value="NE">NE</option>
+                                    <option value="NNE">NNE</option>
+                                    <option value="NNW">NNW</option>
+                                    <option value="NW">NW</option>
+                                    <option value="S">S</option>
+                                    <option value="SE">SE</option>
+                                    <option value="SSE">SSE</option>
+                                    <option value="SSW">SSW</option>
+                                    <option value="SW">SW</option>
+                                    <option value="W">W</option>
+                                    <option value="WNW">WNW</option>
+                                    <option value="WSW">WSW</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="WindDir9am" name = "WindDir9am">Wind Direction at 9am</label>
+                                <select class="form-control" id="WindDir9am" name = "WindDir9am" aria-label="Wind Direction at 9am">
+                                    <option class="hidden" selected disabled>Select Wind Direction at 9am</option>
+                                    <option value="ENE">ENE</option>
+                                    <option value="ESE">ESE</option>
+                                    <option value="E">E</option>
+                                    <option value="N">N</option>
+                                    <option value="NE">NE</option>
+                                    <option value="NNE">NNE</option>
+                                    <option value="NNW">NNW</option>
+                                    <option value="NW">NW</option>
+                                    <option value="S">S</option>
+                                    <option value="SE">SE</option>
+                                    <option value="SSE">SSE</option>
+                                    <option value="SSW">SSW</option>
+                                    <option value="SW">SW</option>
+                                    <option value="W">W</option>
+                                    <option value="WNW">WNW</option>
+                                    <option value="WSW">WSW</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <div class="md-form">
+                                <label for="WindDir3pm" name = "WindDir3pm">Wind Direction at 3pm</label>
+                                <select class="form-control" id="WindDir3pm" name = "WindDir3pm" aria-label="Wind Direction at 3pm">
+                                    <option class="hidden" selected disabled>Select Wind Direction at 3pm</option>
+                                    <option value="ENE">ENE</option>
+                                    <option value="ESE">ESE</option>
+                                    <option value="E">E</option>
+                                    <option value="N">N</option>
+                                    <option value="NE">NE</option>
+                                    <option value="NNE">NNE</option>
+                                    <option value="NNW">NNW</option>
+                                    <option value="NW">NW</option>
+                                    <option value="S">S</option>
+                                    <option value="SE">SE</option>
+                                    <option value="SSE">SSE</option>
+                                    <option value="SSW">SSW</option>
+                                    <option value="SW">SW</option>
+                                    <option value="W">W</option>
+                                    <option value="WNW">WNW</option>
+                                    <option value="WSW">WSW</option>
+                                </select>
+                            </div>
+                        </div>
+						
+                        <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                            <button type="submit" class="btn btn-info button" style="margin-left: 109%; margin-top: 4%;">Predict</button>
+                        </div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

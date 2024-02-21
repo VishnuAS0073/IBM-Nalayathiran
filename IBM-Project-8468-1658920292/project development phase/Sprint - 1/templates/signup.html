@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/log style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Hello World.</h1>
+		<p>Exploratory Analysis of Rain Fall Data in India for Agriculture</p>
+		</div>
+	</div>
+
+		<div class="right">
+		<h4>Sign up</h4>
+		<p>Do have an account? <a href="{{ url_for('login')}}">go to login</a> it takes less than a minute</p>
+		<form class="inputs" form action="{{ url_for('req')}}" method="post">
+            <h3>Username</h3>
+			<input type="text" placeholder="username" id="username" name="username">
+			<h3>Mail</h3>
+			<input type="email" placeholder="mail" id="mailid" name="mailid">
+            <h3>Password</h3>
+			<input type="password" placeholder="password" id="username" name="password">
+			<h3>confirm Password</h3>
+			<input type="password" placeholder="conpassword" id="conpasword" name="conpassword">
+			<br>
+			<br><br>
+			<input type="submit" value="log-in" name="login">
+		</form>
+			
+	</div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/log style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Hello World.</h1>
+		<p>Exploratory Analysis of Rain Fall Data in India for Agriculture</p>
+		</div>
+	</div>
+
+		<div class="right" >
+		<h5>Login</h5>
+		<p>Don't have an account? <a href="{{url_for('signup')}}">Creat Your Account</a> it takes less than a minute</p>
+		<form class="inputs" action="{{url_for('submit')}}" method="post">
+			<input type="text" placeholder="user name" id="username" name="username">
+			<br>
+			<input type="password" placeholder="password" id="username" name="password">
+			<br>
+			<br><br>
+			<input type="submit" value="log-in" name="login">
+		</form>
+			
+	</div>
+	
+</div>
+</body>
+</html>

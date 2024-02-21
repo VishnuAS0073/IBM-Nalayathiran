@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Rainfall Prediction App</title>
+</head>
+<body>
+    <!-- Website Title -->
+		<div class="container home result-home" style="color: #fff;">
+			<h2 class='container-heading'><span>Result - Rainfall Prediction</span></h2>
+				<div class='description'>
+				<p>A Machine Learning Web App, Built with Flask.</p>
+				</div>
+			<!-- Result -->
+			<div class="results">
+
+                {% if my_prediction == 0 %}
+                    <div class="alert alert-warning" role="alert">
+                        <h2>Tomorrow will be no Rain fall</h2>
+                    </div>
+                    
+                {% else %}
+                    <div class="alert alert-success" role="alert">
+                        <h2>Tomorrow will be Rain fall</h2>
+                    </div>
+                {% endif %}
+			</div>
+            <h2><a href="{{ url_for('go_back')}}"> get back</a></h2>
+		</div>
+        
+
+		
+</body>
+</html>
